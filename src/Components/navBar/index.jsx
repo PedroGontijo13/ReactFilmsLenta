@@ -10,7 +10,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from "react";
 import axios from 'axios';
-import { Container } from '@mui/material';
 import CardFilms from '../cardFilms/index'
 
 const Search = styled('div')(({ theme }) => ({
@@ -76,7 +75,7 @@ export default function SearchAppBar({onFormSubmit}) {
 
     return (
         <div>
-            <Box sx={{ flexGrow: 2 }}>
+            <Box display="flex" sx={{ flexGrow: 2 }}>
                 <AppBar position="static">
                     <Toolbar>
                     <IconButton
@@ -117,7 +116,9 @@ export default function SearchAppBar({onFormSubmit}) {
                     </Toolbar>
                 </AppBar>
             </Box>
-            {movie}
+            <Box display="flex" justifyContent="center" flexDirection="row">
+              {movie}
+            </Box>
         </div>
     );
 }
